@@ -1,0 +1,2381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eric & Zyra | Wedding Invitation</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600&family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600&family=Quicksand:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --sage: #9CAF88;
+            --sage-dark: #7a9670;
+            --sage-light: #b8caaa;
+            --matcha: #C9D8B6;
+            --cream: #FAF9F6;
+            --dark: #3F3F3F;
+            --gold: #d4af37;
+            --terra: #d4a373;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--cream);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            pointer-events: none;
+        }
+
+
+
+        /* ========== HERO ========== */
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: url('https://images.unsplash.com/photo-1606800052052-a08af7148866?w=1400') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(156, 175, 136, 0.75), rgba(122, 150, 112, 0.85));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+            max-width: 900px;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .monogram {
+            font-family: 'Great Vibes', cursive;
+            font-size: 6rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInScale 1.5s ease;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 8px;
+            font-weight: 400;
+        }
+
+        .hero .date {
+            font-size: 1.8rem;
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 2rem;
+            letter-spacing: 3px;
+        }
+
+        .hero .tagline {
+            font-size: 1.2rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5rem;
+            animation: bounce 2s infinite;
+            opacity: 0.9;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+                opacity: 1;
+            }
+
+            50% {
+                transform: translateX(-50%) translateY(-8px);
+                opacity: 0.7;
+            }
+        }
+
+        /* ========== SECTION SHARED STYLES ========== */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            text-align: center;
+            color: var(--sage-dark);
+            margin-bottom: 1rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--sage);
+            margin-bottom: 4rem;
+            font-weight: 300;
+        }
+
+        /* ========== OUR STORY ========== */
+        .story-section {
+            background: white;
+        }
+
+        .story-timeline {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 5rem;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(even) {
+            direction: rtl;
+        }
+
+        .timeline-item:nth-child(even)>* {
+            direction: ltr;
+        }
+
+        .timeline-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease;
+        }
+
+        .timeline-image:hover {
+            transform: scale(1.05);
+        }
+
+        .timeline-image img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+        }
+
+        .timeline-content {
+            padding: 2rem;
+        }
+
+        .timeline-content h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--sage-dark);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content .date {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: var(--sage);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .timeline-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--dark);
+        }
+
+        /* ========== GALLERY ========== */
+        /* ========== GALLERY - HORIZONTAL PARALLAX ========== */
+        .gallery-section {
+            overflow: hidden;
+            height: 100vh;
+            position: relative;
+            background: linear-gradient(to bottom, #f9fcf8, #f0f7ed);
+        }
+
+        .gallery-section .section-title,
+        .gallery-section .section-subtitle {
+            position: absolute;
+            left: 2rem;
+            z-index: 10;
+        }
+
+        .gallery-section .section-title {
+            top: 2rem;
+        }
+
+        .gallery-section .section-subtitle {
+            top: 5rem;
+        }
+
+        .gallery-scroll-info {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--sage-dark);
+            z-index: 10;
+        }
+
+        .gallery-scroll-info svg {
+            width: 40px;
+            fill: currentcolor;
+        }
+
+        /* Hide scrollbar */
+        .gallery-section ::-webkit-scrollbar {
+            width: 1px;
+            height: 1px;
+        }
+
+        .gallery-section ::-webkit-scrollbar-button {
+            width: 1px;
+            height: 1px;
+        }
+
+        .horizontal-scroll-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100vh;
+            transform: rotate(-90deg) translate3d(0, -100vh, 0);
+            transform-origin: right top;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 0;
+            height: 100vw;
+            perspective: 1px;
+            transform-style: preserve-3d;
+            padding-bottom: 10rem;
+        }
+
+        .img-wrapper {
+            transform: rotate(90deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 40vh;
+            transform-origin: 50% 50%;
+            transform: rotate(90deg) translateZ(.1px) scale(0.9) translateX(0px) translateY(-3vh);
+            transition: 1s;
+        }
+
+        .img-wrapper:hover {
+            min-height: 65vh;
+        }
+
+        .img-wrapper a {
+            overflow: hidden;
+            display: block;
+            padding: 1vh;
+            background: var(--cream);
+            box-shadow: 0 10px 50px rgba(122, 150, 112, 0.3);
+            border-radius: 8px;
+        }
+
+        .img-wrapper img {
+            max-width: 45vh;
+            max-height: 50vh;
+            transition: .5s;
+            vertical-align: top;
+            filter: saturate(70%) sepia(20%) hue-rotate(-10deg);
+        }
+
+        .img-wrapper a:hover img {
+            filter: none;
+        }
+
+        .slower {
+            transform: rotate(90deg) translateZ(-.2px) scale(1.1) translateX(0%) translateY(-10vh);
+        }
+
+        .slower1 {
+            transform: rotate(90deg) translateZ(-.25px) scale(1.05) translateX(0%) translateY(8vh);
+        }
+
+        .slower2 {
+            transform: rotate(90deg) translateZ(-.3px) scale(1.3) translateX(0%) translateY(2vh);
+        }
+
+        .slower-down {
+            transform: rotate(90deg) translateZ(-.2px) scale(1.1) translateX(0%) translateY(16vh);
+        }
+
+        .faster {
+            transform: rotate(90deg) translateZ(.15px) scale(0.8) translateX(0%) translateY(14vh);
+        }
+
+        .faster1 {
+            transform: rotate(90deg) translateZ(.05px) scale(0.8) translateX(0%) translateY(10vh);
+        }
+
+        .fastest {
+            transform: rotate(90deg) translateZ(.22px) scale(0.7) translateX(-10vh) translateY(-15vh);
+        }
+
+        .vertical {
+            transform: rotate(90deg) translateZ(-.15px) scale(1.15) translateX(0%) translateY(0%);
+        }
+
+        .last {
+            transform: rotate(90deg) translateZ(-.2px) scale(1.1) translateX(25vh) translateY(-8vh);
+        }
+
+        /* ========== WEDDING DETAILS ========== */
+        .details-section {
+            background: white;
+        }
+
+        .venue-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+        }
+
+        .venue-card {
+            background: linear-gradient(135deg, rgba(156, 175, 136, 0.05), rgba(201, 216, 182, 0.1));
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .venue-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .venue-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .venue-content {
+            padding: 3rem;
+        }
+
+        .venue-content h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--sage-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .venue-content p {
+            margin: 0.8rem 0;
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+
+        .map-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1.2rem 3rem;
+            background: var(--sage);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .map-btn:hover {
+            background: var(--sage-dark);
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ========== ATTIRE ========== */
+        .attire-section {
+            background: linear-gradient(135deg, #f0f7ed, #e8f3e0);
+        }
+
+        .attire-showcase {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .attire-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            transition: transform 0.4s ease;
+            height: 500px;
+        }
+
+        .attire-card:hover {
+            transform: scale(1.05);
+        }
+
+        .attire-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .attire-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent 60%);
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+            color: white;
+        }
+
+        .attire-overlay h5 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+
+        /* ========== SPONSOR SECTIONS - REDESIGNED ========== */
+        .entourage-section {
+            background: linear-gradient(to bottom, #ffffff, #f9fcf8);
+        }
+
+        .entourage-category {
+            margin-bottom: 5rem;
+        }
+
+        /* Principal Sponsors - Refined 2-Column List for 40+ People */
+        .principal-sponsors-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .principal-sponsors-container {
+            position: relative;
+            padding: 3rem 0;
+        }
+
+        .principal-sponsors-elegant {
+            position: relative;
+            background: white;
+            border-radius: 30px;
+            padding: 4.5rem 4rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            border: 2px solid rgba(156, 175, 136, 0.15);
+            overflow: hidden;
+        }
+
+        .principal-sponsors-elegant::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--sage), var(--gold), var(--sage-dark), var(--gold), var(--sage));
+        }
+
+        .principal-sponsors-elegant::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--sage), var(--gold), var(--sage-dark), var(--gold), var(--sage));
+        }
+
+        .principal-decorative-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+            position: relative;
+        }
+
+        .principal-decorative-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1.2rem;
+            display: block;
+        }
+
+        .principal-decorative-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            color: var(--sage);
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+
+        .principal-decorative-line {
+            width: 150px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 1rem auto 0;
+        }
+
+        .principal-sponsors-columns {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.7rem 5rem;
+            max-width: 850px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .principal-sponsors-columns::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, var(--sage-light), var(--sage-light), transparent);
+            transform: translateX(-50%);
+        }
+
+        .principal-sponsor-item {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.02rem;
+            color: var(--dark);
+            line-height: 1.5;
+            padding: 0.6rem 1rem;
+            position: relative;
+            opacity: 0;
+            animation: slideInFade 0.4s ease forwards;
+            transition: all 0.3s ease;
+            background: linear-gradient(90deg, transparent, rgba(156, 175, 136, 0.02), transparent);
+        }
+
+        .principal-sponsor-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(156, 175, 136, 0.2), transparent);
+        }
+
+        .principal-sponsor-item::before {
+            content: '❀';
+            position: absolute;
+            left: -8px;
+            color: var(--sage);
+            opacity: 0;
+            transition: all 0.3s ease;
+            font-size: 0.8rem;
+            transform: scale(0);
+        }
+
+        .principal-sponsor-item:hover {
+            color: var(--sage-dark);
+            padding-left: 1.5rem;
+            background: linear-gradient(90deg, transparent, rgba(156, 175, 136, 0.08), transparent);
+        }
+
+        .principal-sponsor-item:hover::before {
+            opacity: 1;
+            left: 2px;
+            transform: scale(1);
+        }
+
+        @keyframes slideInFade {
+            from {
+                opacity: 0;
+                transform: translateX(-15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Optimized stagger animation for 40 items */
+        .principal-sponsor-item:nth-child(1) {
+            animation-delay: 0.03s;
+        }
+
+        .principal-sponsor-item:nth-child(2) {
+            animation-delay: 0.04s;
+        }
+
+        .principal-sponsor-item:nth-child(3) {
+            animation-delay: 0.05s;
+        }
+
+        .principal-sponsor-item:nth-child(4) {
+            animation-delay: 0.06s;
+        }
+
+        .principal-sponsor-item:nth-child(5) {
+            animation-delay: 0.07s;
+        }
+
+        .principal-sponsor-item:nth-child(6) {
+            animation-delay: 0.08s;
+        }
+
+        .principal-sponsor-item:nth-child(7) {
+            animation-delay: 0.09s;
+        }
+
+        .principal-sponsor-item:nth-child(8) {
+            animation-delay: 0.10s;
+        }
+
+        .principal-sponsor-item:nth-child(9) {
+            animation-delay: 0.11s;
+        }
+
+        .principal-sponsor-item:nth-child(10) {
+            animation-delay: 0.12s;
+        }
+
+        .principal-sponsor-item:nth-child(11) {
+            animation-delay: 0.13s;
+        }
+
+        .principal-sponsor-item:nth-child(12) {
+            animation-delay: 0.14s;
+        }
+
+        .principal-sponsor-item:nth-child(13) {
+            animation-delay: 0.15s;
+        }
+
+        .principal-sponsor-item:nth-child(14) {
+            animation-delay: 0.16s;
+        }
+
+        .principal-sponsor-item:nth-child(15) {
+            animation-delay: 0.17s;
+        }
+
+        .principal-sponsor-item:nth-child(16) {
+            animation-delay: 0.18s;
+        }
+
+        .principal-sponsor-item:nth-child(17) {
+            animation-delay: 0.19s;
+        }
+
+        .principal-sponsor-item:nth-child(18) {
+            animation-delay: 0.20s;
+        }
+
+        .principal-sponsor-item:nth-child(19) {
+            animation-delay: 0.21s;
+        }
+
+        .principal-sponsor-item:nth-child(20) {
+            animation-delay: 0.22s;
+        }
+
+        .principal-sponsor-item:nth-child(21) {
+            animation-delay: 0.23s;
+        }
+
+        .principal-sponsor-item:nth-child(22) {
+            animation-delay: 0.24s;
+        }
+
+        .principal-sponsor-item:nth-child(23) {
+            animation-delay: 0.25s;
+        }
+
+        .principal-sponsor-item:nth-child(24) {
+            animation-delay: 0.26s;
+        }
+
+        .principal-sponsor-item:nth-child(25) {
+            animation-delay: 0.27s;
+        }
+
+        .principal-sponsor-item:nth-child(26) {
+            animation-delay: 0.28s;
+        }
+
+        .principal-sponsor-item:nth-child(27) {
+            animation-delay: 0.29s;
+        }
+
+        .principal-sponsor-item:nth-child(28) {
+            animation-delay: 0.30s;
+        }
+
+        .principal-sponsor-item:nth-child(29) {
+            animation-delay: 0.31s;
+        }
+
+        .principal-sponsor-item:nth-child(30) {
+            animation-delay: 0.32s;
+        }
+
+        .principal-sponsor-item:nth-child(31) {
+            animation-delay: 0.33s;
+        }
+
+        .principal-sponsor-item:nth-child(32) {
+            animation-delay: 0.34s;
+        }
+
+        .principal-sponsor-item:nth-child(33) {
+            animation-delay: 0.35s;
+        }
+
+        .principal-sponsor-item:nth-child(34) {
+            animation-delay: 0.36s;
+        }
+
+        .principal-sponsor-item:nth-child(35) {
+            animation-delay: 0.37s;
+        }
+
+        .principal-sponsor-item:nth-child(36) {
+            animation-delay: 0.38s;
+        }
+
+        .principal-sponsor-item:nth-child(37) {
+            animation-delay: 0.39s;
+        }
+
+        .principal-sponsor-item:nth-child(38) {
+            animation-delay: 0.40s;
+        }
+
+        .principal-sponsor-item:nth-child(39) {
+            animation-delay: 0.41s;
+        }
+
+        .principal-sponsor-item:nth-child(40) {
+            animation-delay: 0.42s;
+        }
+
+        /* Secondary Sponsors Wrapper */
+        .secondary-sponsors-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .category-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            text-align: center;
+            color: var(--sage-dark);
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        /* Arc Background */
+        .sponsors-arc-bg {
+            position: relative;
+            background: linear-gradient(135deg, rgba(156, 175, 136, 0.15), rgba(201, 216, 182, 0.2));
+            border-radius: 50% 50% 0 0;
+            padding: 3rem 0 3rem 0;
+            margin: 0 auto;
+            max-width: 100%;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .sponsors-arc-bg.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .sponsors-arc-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50% 50% 0 0;
+            padding: 3px;
+            background: linear-gradient(135deg, var(--sage), var(--matcha));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        /* Sponsors Content Wrapper - This ensures perfect centering */
+        .sponsors-content {
+            max-width: 560px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+        }
+
+        /* Two Column Grid */
+        .sponsors-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 3rem;
+            row-gap: 0.6rem;
+        }
+
+        .sponsors-list.single-column {
+            grid-template-columns: 1fr;
+            max-width: 300px;
+        }
+
+        .sponsor-item {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.95rem;
+            color: var(--dark);
+            line-height: 1.5;
+            opacity: 0;
+            animation: slideInList 0.6s ease forwards;
+        }
+
+        .sponsor-item:nth-child(even) {
+            transform: translateX(20px);
+        }
+
+        @keyframes slideInList {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Stagger animation delays */
+        .sponsor-item:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .sponsor-item:nth-child(2) {
+            animation-delay: 0.15s;
+        }
+
+        .sponsor-item:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .sponsor-item:nth-child(4) {
+            animation-delay: 0.25s;
+        }
+
+        .sponsor-item:nth-child(5) {
+            animation-delay: 0.3s;
+        }
+
+        .sponsor-item:nth-child(6) {
+            animation-delay: 0.35s;
+        }
+
+        .sponsor-item:nth-child(7) {
+            animation-delay: 0.4s;
+        }
+
+        .sponsor-item:nth-child(8) {
+            animation-delay: 0.45s;
+        }
+
+        .sponsor-item:nth-child(9) {
+            animation-delay: 0.5s;
+        }
+
+        .sponsor-item:nth-child(10) {
+            animation-delay: 0.55s;
+        }
+
+        .sponsor-item:nth-child(11) {
+            animation-delay: 0.6s;
+        }
+
+        .sponsor-item:nth-child(12) {
+            animation-delay: 0.65s;
+        }
+
+        .sponsor-item:nth-child(13) {
+            animation-delay: 0.7s;
+        }
+
+        .sponsor-item:nth-child(14) {
+            animation-delay: 0.75s;
+        }
+
+        .sponsor-item:nth-child(15) {
+            animation-delay: 0.8s;
+        }
+
+        .sponsor-item:nth-child(16) {
+            animation-delay: 0.85s;
+        }
+
+        .sponsor-item:nth-child(17) {
+            animation-delay: 0.9s;
+        }
+
+        .sponsor-item:nth-child(18) {
+            animation-delay: 0.95s;
+        }
+
+        .sponsor-item:nth-child(19) {
+            animation-delay: 1s;
+        }
+
+        .sponsor-item:nth-child(20) {
+            animation-delay: 1.05s;
+        }
+
+        .sponsor-item:nth-child(21) {
+            animation-delay: 1.1s;
+        }
+
+        .sponsor-item:nth-child(22) {
+            animation-delay: 1.15s;
+        }
+
+        .sponsor-item:nth-child(23) {
+            animation-delay: 1.2s;
+        }
+
+        .sponsor-item:nth-child(24) {
+            animation-delay: 1.25s;
+        }
+
+        .sponsor-item:nth-child(25) {
+            animation-delay: 1.3s;
+        }
+
+        .sponsor-item:nth-child(26) {
+            animation-delay: 1.35s;
+        }
+
+        .sponsor-item:nth-child(27) {
+            animation-delay: 1.4s;
+        }
+
+        .sponsor-item:nth-child(28) {
+            animation-delay: 1.45s;
+        }
+
+        .sponsor-item:nth-child(29) {
+            animation-delay: 1.5s;
+        }
+
+        .sponsor-item:nth-child(30) {
+            animation-delay: 1.55s;
+        }
+
+        .sponsor-item:nth-child(31) {
+            animation-delay: 1.6s;
+        }
+
+        .sponsor-item:nth-child(32) {
+            animation-delay: 1.65s;
+        }
+
+        .sponsor-item:nth-child(33) {
+            animation-delay: 1.7s;
+        }
+
+        .sponsor-item:nth-child(34) {
+            animation-delay: 1.75s;
+        }
+
+        .sponsor-item:nth-child(35) {
+            animation-delay: 1.8s;
+        }
+
+        .sponsor-item:nth-child(36) {
+            animation-delay: 1.85s;
+        }
+
+        .sponsor-item:nth-child(37) {
+            animation-delay: 1.9s;
+        }
+
+        .sponsor-item:nth-child(38) {
+            animation-delay: 1.95s;
+        }
+
+        .sponsor-item:nth-child(39) {
+            animation-delay: 2s;
+        }
+
+        .sponsor-item:nth-child(40) {
+            animation-delay: 2.05s;
+        }
+
+        .sponsor-role {
+            font-style: italic;
+            color: var(--sage);
+            display: block;
+            font-size: 1rem;
+            margin-top: 0.2rem;
+        }
+
+        /* Secondary Sponsors Styling */
+        .secondary-section-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            color: var(--sage-dark);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .secondary-group {
+            margin-bottom: 2.5rem;
+        }
+
+        .secondary-group-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2rem;
+            color: var(--dark);
+            text-align: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .secondary-names {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .secondary-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .secondary-grid-item {
+            text-align: center;
+        }
+
+        /* ========== RSVP ========== */
+        .rsvp-section {
+            background: var(--cream);
+            text-align: center;
+        }
+
+        .rsvp-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 4rem;
+            border-radius: 25px;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+        }
+
+        .rsvp-form {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .rsvp-form input,
+        .rsvp-form select,
+        .rsvp-form textarea {
+            width: 100%;
+            padding: 1.2rem;
+            border: 2px solid var(--matcha);
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .rsvp-form input:focus,
+        .rsvp-form select:focus,
+        .rsvp-form textarea:focus {
+            outline: none;
+            border-color: var(--sage);
+        }
+
+        .rsvp-form button {
+            padding: 1.5rem 3rem;
+            background: var(--sage);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .rsvp-form button:hover {
+            background: var(--sage-dark);
+            transform: scale(1.05);
+        }
+
+        .form-status {
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            color: var(--sage-dark);
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: linear-gradient(135deg, var(--sage-dark), var(--sage));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-divider {
+            width: 100px;
+            height: 2px;
+            background: white;
+            margin: 1.5rem auto;
+            opacity: 0.5;
+        }
+
+        .footer-creator {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            opacity: 0.9;
+        }
+
+        .footer-creator a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .footer-creator a:hover {
+            color: #f4d03f;
+        }
+
+        .footer-heart {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            10%,
+            30% {
+                transform: scale(1.1);
+            }
+
+            20%,
+            40% {
+                transform: scale(1);
+            }
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+
+            .timeline-item,
+            .venue-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .timeline-item:nth-child(even) {
+                direction: ltr;
+            }
+
+            .attire-showcase {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .principal-sponsors-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+
+            .sponsors-grid-modern {
+                grid-template-columns: 1fr;
+            }
+
+            .category-title {
+                font-size: 2.5rem;
+            }
+
+            .principal-sponsors-wrapper {
+                padding: 0 1.5rem;
+            }
+
+            .sponsors-arc-bg {
+                padding: 2.5rem 0 2.5rem 0;
+            }
+
+            .sponsors-content {
+                max-width: 500px;
+                padding: 0 1.5rem;
+            }
+
+            .sponsors-list {
+                column-gap: 2.5rem;
+                row-gap: 0.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2.8rem;
+                letter-spacing: 4px;
+            }
+
+            .monogram {
+                font-size: 4rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .category-title {
+                font-size: 2.5rem;
+            }
+
+            .attire-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-image img {
+                height: 300px;
+            }
+
+            .rsvp-container {
+                padding: 2.5rem 2rem;
+            }
+
+            .principal-sponsors-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+
+            .category-title {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .principal-sponsors-wrapper {
+                padding: 0 1rem;
+            }
+
+            .sponsors-arc-bg {
+                padding: 2rem 0 2rem 0;
+                margin: 0 0.5rem;
+            }
+
+            .sponsors-content {
+                max-width: 100%;
+                padding: 0 1rem;
+            }
+
+            .sponsors-list {
+                column-gap: 2rem;
+                row-gap: 0.4rem;
+            }
+
+            .sponsor-item {
+                font-size: 0.88rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .monogram {
+                font-size: 3rem;
+            }
+
+            .hero .date {
+                font-size: 1.3rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .category-title {
+                font-size: 2rem;
+            }
+
+            .principal-sponsor-card,
+            .sponsor-card-modern {
+                padding: 1.5rem;
+            }
+
+            .sponsor-initial {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .category-title {
+                font-size: 1.8rem;
+            }
+
+            .principal-sponsors-wrapper {
+                padding: 0 0.5rem;
+            }
+
+            .sponsors-arc-bg {
+                padding: 1.8rem 0 1.8rem 0;
+                margin: 0 0.3rem;
+            }
+
+            .sponsors-content {
+                padding: 0 0.8rem;
+            }
+
+            .sponsors-list {
+                column-gap: 1.5rem;
+                row-gap: 0.35rem;
+            }
+
+            .sponsor-item {
+                font-size: 0.82rem;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* ========== ENVELOPE ANIMATION ========== */
+        :root {
+            --envelope-bg: #f5edd1;
+            --envelope-tab: #ecdeb8;
+            --envelope-cover: #e6cfa7;
+            --shadow-color: rgba(0, 0, 0, 0.2);
+            --heart-color: #d4af37;
+        }
+
+        .envelope-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, #1a4d2e, #2d6a4f);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .envelope-container.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .envelope-wrapper {
+            background: var(--envelope-bg);
+            box-shadow: 0 0 60px var(--shadow-color);
+            position: relative;
+            transition: transform 1.5s ease;
+        }
+
+        .envelope-wrapper.opening {
+            transform: scale(0.95);
+        }
+
+        .envelope {
+            position: relative;
+            width: 400px;
+            height: 300px;
+        }
+
+        .envelope::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            z-index: 2;
+            border-top: 170px solid var(--envelope-tab);
+            border-right: 200px solid transparent;
+            border-left: 200px solid transparent;
+            transform-origin: top;
+            transition: all 0.5s ease-in-out 0.7s;
+        }
+
+        .envelope::after {
+            content: "";
+            position: absolute;
+            z-index: 2;
+            width: 0;
+            height: 0;
+            border-top: 170px solid transparent;
+            border-right: 200px solid var(--envelope-cover);
+            border-bottom: 130px solid var(--envelope-cover);
+            border-left: 200px solid var(--envelope-cover);
+        }
+
+        .invitation-letter {
+            position: absolute;
+            right: 20%;
+            bottom: 0;
+            width: 60%;
+            height: 85%;
+            background: white;
+            transition: all 1.2s ease-in-out;
+            box-shadow: 0 0 10px var(--shadow-color);
+            padding: 30px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .invitation-letter .preview-text {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            color: var(--sage-dark);
+            margin-bottom: 1rem;
+        }
+
+        .invitation-letter .preview-names {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            letter-spacing: 3px;
+        }
+
+        .invitation-letter .preview-date {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: var(--sage);
+        }
+
+        .envelope-heart {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background: var(--heart-color);
+            z-index: 4;
+            transform: translate(-50%, -20%) rotate(-45deg);
+            transition: transform 0.5s ease-in-out 1s;
+            box-shadow: 0 2px 10px var(--shadow-color);
+            cursor: pointer;
+            animation: heartPulse 1.5s infinite;
+        }
+
+        .envelope-heart::before,
+        .envelope-heart::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--heart-color);
+            border-radius: 50%;
+        }
+
+        .envelope-heart::before {
+            top: -10px;
+        }
+
+        .envelope-heart::after {
+            right: -10px;
+        }
+
+        @keyframes heartPulse {
+
+            0%,
+            100% {
+                transform: translate(-50%, -20%) rotate(-45deg) scale(1);
+            }
+
+            50% {
+                transform: translate(-50%, -20%) rotate(-45deg) scale(1.1);
+            }
+        }
+
+        .envelope-wrapper.flap .envelope::before {
+            transform: rotateX(180deg);
+            z-index: 0;
+        }
+
+        .envelope-wrapper.flap .invitation-letter {
+            bottom: 150px;
+            transform: scale(1.3);
+            transition-delay: 1s;
+        }
+
+        .envelope-wrapper.flap .envelope-heart {
+            transform: translate(-50%, -50%) rotate(90deg) scale(1.2);
+            transition-delay: 0.4s;
+        }
+
+        .envelope-wrapper.opened .invitation-letter {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100vw;
+            height: 100vh;
+            transform: scale(1);
+            z-index: 100000;
+            transition: all 1s ease;
+            overflow-y: auto;
+            padding: 0;
+        }
+
+        .main-content {
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+
+        .main-content.visible {
+            opacity: 1;
+        }
+
+        .tap-instruction {
+            position: absolute;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Cormorant Garamond', serif;
+            color: white;
+            font-size: 1.1rem;
+            text-align: center;
+            animation: fadeInOut 2s infinite;
+        }
+
+        @keyframes fadeInOut {
+
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* Mobile responsive envelope */
+        @media (max-width: 768px) {
+            .envelope {
+                width: 300px;
+                height: 230px;
+            }
+
+            .envelope::before {
+                border-top: 130px solid var(--envelope-tab);
+                border-right: 150px solid transparent;
+                border-left: 150px solid transparent;
+            }
+
+            .envelope::after {
+                border-top: 130px solid transparent;
+                border-right: 150px solid var(--envelope-cover);
+                border-bottom: 100px solid var(--envelope-cover);
+                border-left: 150px solid var(--envelope-cover);
+            }
+
+            .invitation-letter .preview-text {
+                font-size: 2rem;
+            }
+
+            .invitation-letter .preview-names {
+                font-size: 1.2rem;
+            }
+
+            .envelope-wrapper.flap .invitation-letter {
+                bottom: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ENVELOPE ANIMATION -->
+    <div class="envelope-container" id="envelopeContainer">
+        <div class="envelope-wrapper" id="envelopeWrapper">
+            <div class="envelope">
+                <div class="invitation-letter" id="invitationLetter">
+                    <div class="preview-text">You're Invited</div>
+                    <div class="preview-names">ERIC & ZYRA</div>
+                    <div class="preview-date">May 28, 2026</div>
+                </div>
+            </div>
+            <div class="envelope-heart" id="envelopeHeart"></div>
+            <div class="tap-instruction">Tap the heart to open</div>
+        </div>
+    </div>
+
+    <div class="main-content" id="mainContent">
+        <span class="container"></span>
+
+
+
+
+        <!-- INTRO BOOK ANIMATION -->
+        <!-- HERO -->
+        <div class="hero" id="heroSection">
+            <div class="hero-content">
+                <div class="monogram">E & Z</div>
+                <h2>ERIC & ZYRA</h2>
+                <p class="date">May 28, 2026</p>
+                <p class="tagline">With love and joy, we invite you to celebrate our wedding</p>
+            </div>
+            <div class="scroll-hint">↓</div>
+        </div>
+
+        <!-- OUR STORY -->
+        <section class="story-section">
+            <h3 class="section-title">Our Love Story</h3>
+            <p class="section-subtitle">From coffee dates to gaming marathons, here's our journey</p>
+
+            <div class="story-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-image">
+                        <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800"
+                            alt="First meeting">
+                    </div>
+                    <div class="timeline-content">
+                        <h4>The First Coffee</h4>
+                        <p class="date">Summer 2019</p>
+                        <p>It all started with a simple coffee date. Little did we know that this would
+                            be the beginning of our greatest adventure together.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-image">
+                        <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?w=800"
+                            alt="Gaming together">
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Level Up Together</h4>
+                        <p class="date">2020 - 2022</p>
+                        <p>Through countless gaming sessions and shared victories, we discovered we were
+                            the perfect team both in-game and in life.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-image">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800"
+                            alt="The proposal">
+                    </div>
+                    <div class="timeline-content">
+                        <h4>The Proposal</h4>
+                        <p class="date">December 2024</p>
+                        <p>Under a starlit sky, he asked the question that would change our lives
+                            forever. She said yes, and our next chapter began.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY -->
+        <section class="gallery-section">
+            <h3 class="section-title">Our Moments</h3>
+            <p class="section-subtitle">Captured memories together</p>
+
+            <p class="gallery-scroll-info">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                        x="0px" y="0px" viewBox="0 0 100 100">
+                        <path
+                            d="M50,67.1c-0.6,0-1.2-0.2-1.8-0.7c-3.8-3.8-7.7-7.7-11.5-11.5c-2.3-2.3,1.2-5.8,3.5-3.5c2.5,2.5,4.9,4.9,7.4,7.4      c0-13.7,0-27.4,0-41.2c0-0.6,0.2-1.2,0.5-1.5c0,0,0,0,0,0c0.4-0.6,1.1-1,2-0.9c13.7,0.3,26.4,7.2,33.5,19.1      C96.5,55.9,84.7,85,60.2,91.6C35.5,98.2,11.6,79.1,11.1,54c-0.1-3.2,4.9-3.2,5,0c0.3,13.8,8.4,26.4,21.3,31.5      c12.5,5,27.1,1.9,36.6-7.5c9.5-9.5,12.5-24.1,7.5-36.6c-4.8-12.1-16.3-20.1-29-21.2c0,12.8,0,25.5,0,38.3      c2.5-2.5,4.9-4.9,7.4-7.4c2.3-2.3,5.8,1.3,3.5,3.5c-3.9,3.9-7.8,7.8-11.8,11.8C51.2,66.9,50.6,67.1,50,67.1z" />
+                    </svg>
+                </span>
+                Scroll down
+            </p>
+
+            <div class="horizontal-scroll-wrapper">
+                <div class="img-wrapper slower">
+                    <a href="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800" target="_blank"
+                        rel="noopener">
+                        <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800"
+                            alt="Our Moment 1">
+                    </a>
+                </div>
+
+                <div class="img-wrapper faster">
+                    <a href="https://images.unsplash.com/photo-1529634806980-85c3dd6d50b5?w=600" target="_blank"
+                        rel="noopener">
+                        <img src="https://images.unsplash.com/photo-1529634806980-85c3dd6d50b5?w=600"
+                            alt="Our Moment 2">
+                    </a>
+                </div>
+
+                <div class="img-wrapper slower vertical">
+                    <a href="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600" target="_blank"
+                        rel="noopener">
+                        <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600"
+                            alt="Our Moment 3">
+                    </a>
+                </div>
+
+                <div class="img-wrapper slower slower-down">
+                    <a href="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800" target="_blank"
+                        rel="noopener">
+                        <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800"
+                            alt="Our Moment 4">
+                    </a>
+                </div>
+
+                <div class="img-wrapper">
+                    <a href="https://images.unsplash.com/photo-1518050346460-465bb2e3a0b4?w=600" target="_blank"
+                        rel="noopener">
+                        <img src="https://images.unsplash.com/photo-1518050346460-465bb2e3a0b4?w=600"
+                            alt="Our Moment 5">
+                    </a>
+                </div>
+
+                <div class="img-wrapper slower">
+                    <a href="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600" target="_blank"
+                        rel="noopener">
+                        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600"
+                            alt="Our Moment 6">
+                    </a>
+                </div>
+
+                <div class="img-wrapper faster1">
+                    <a href="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800" target="_blank"
+                        rel="noopener">
+                        <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800"
+                            alt="Our Moment 7">
+                    </a>
+                </div>
+
+                <div class="img-wrapper slower slower2">
+                    <a href="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=600" target="_blank"
+                        rel="noopener">
+                        <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=600"
+                            alt="Our Moment 8">
+                    </a>
+                </div>
+
+                <div class="img-wrapper">
+                    <a href="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600" target="_blank"
+                        rel="noopener">
+                        <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600"
+                            alt="Our Moment 9">
+                    </a>
+                </div>
+
+                <div class="img-wrapper slower last">
+                    <a href="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600" target="_blank"
+                        rel="noopener">
+                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600"
+                            alt="Our Moment 10">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- WEDDING DETAILS -->
+        <section class="details-section">
+            <h3 class="section-title">Wedding Details</h3>
+            <p class="section-subtitle">Join us as we say "I do"</p>
+
+            <div class="venue-grid">
+                <div class="venue-card">
+                    <img class="venue-image" src="https://images.unsplash.com/photo-1519167758481-83f29da8c326?w=800"
+                        alt="Church">
+                    <div class="venue-content">
+                        <h4>Ceremony</h4>
+                        <p><strong>Our Lady Of The Pillar Parish Church</strong></p>
+                        <p>Cauayan City, Isabela</p>
+                        <p>May 28, 2026</p>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=WQMF%2B6XF%2C%20Cauayan%20City%2C%20Isabela%2C%20Philippines"
+                            target="_blank" class="map-btn">Get Directions</a>
+                    </div>
+                </div>
+
+                <div class="venue-card">
+                    <img class="venue-image" src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800"
+                        alt="Reception">
+                    <div class="venue-content">
+                        <h4>Reception</h4>
+                        <p><strong>ICON Isabela Convention Center</strong></p>
+                        <p>Gov. F.N. Dy Blvd, Cauayan City, Isabela</p>
+                        <p>Dinner & Dancing to follow</p>
+                        <a href="https://www.google.com/maps/dir//ICON+Isabela+Convention+Center,+WQX4%2B8GM,+Gov.+F.N.+Dy+Blvd,+Cauayan+City,+Isabela/@16.9463904,121.7576908,14.26z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3385516e0177db29:0x3f2166804c6fbd4a!2m2!1d121.756306!2d16.9483343?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D"
+                            target="_blank" class="map-btn">Get Directions</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ATTIRE -->
+        <section class="attire-section">
+            <h3 class="section-title">Dress Code</h3>
+            <p class="section-subtitle">Semi-Formal / Casual Attire</p>
+
+            <div class="attire-showcase">
+                <div class="attire-card">
+                    <img src="https://images.unsplash.com/photo-1594034098284-8f4594a7f2d1?w=600" alt="Men's suit">
+                    <div class="attire-overlay">
+                        <h5>Suit & Tie</h5>
+                    </div>
+                </div>
+                <div class="attire-card">
+                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600" alt="Men's casual">
+                    <div class="attire-overlay">
+                        <h5>Smart Casual</h5>
+                    </div>
+                </div>
+                <div class="attire-card">
+                    <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=600" alt="Women's dress">
+                    <div class="attire-overlay">
+                        <h5>Cocktail Dress</h5>
+                    </div>
+                </div>
+                <div class="attire-card">
+                    <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=600" alt="Women's elegant">
+                    <div class="attire-overlay">
+                        <h5>Elegant Attire</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRINCIPAL SPONSORS & SECONDARY SPONSORS -->
+        <section class="entourage-section">
+            <h3 class="section-title">Our Sponsors</h3>
+            <p class="section-subtitle">With gratitude to those who guide us</p>
+
+            <!-- PRINCIPAL SPONSORS -->
+            <div class="entourage-category">
+                <h4 class="category-title">Principal Sponsors</h4>
+                <div class="principal-sponsors-wrapper">
+                    <div class="principal-sponsors-container">
+                        <div class="principal-sponsors-elegant">
+                            <div class="principal-decorative-header">
+                                <span class="principal-decorative-icon">✧</span>
+                                <p class="principal-decorative-subtitle">Our Guiding Lights</p>
+                                <div class="principal-decorative-line"></div>
+                            </div>
+
+                            <div class="principal-sponsors-columns">
+                                <div class="principal-sponsor-item">Mr. Juan Dela Cruz</div>
+                                <div class="principal-sponsor-item">Mrs. Maria Santos</div>
+                                <div class="principal-sponsor-item">Mr. Pedro Garcia</div>
+                                <div class="principal-sponsor-item">Mrs. Ana Reyes</div>
+                                <div class="principal-sponsor-item">Mr. Carlos Mendoza</div>
+                                <div class="principal-sponsor-item">Mrs. Elena Rodriguez</div>
+                                <div class="principal-sponsor-item">Mr. Miguel Torres</div>
+                                <div class="principal-sponsor-item">Mrs. Sofia Fernandez</div>
+                                <div class="principal-sponsor-item">Mr. Roberto Diaz</div>
+                                <div class="principal-sponsor-item">Mrs. Carmen Lopez</div>
+                                <!-- Add up to 40 sponsors - the layout handles it perfectly -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECONDARY SPONSORS -->
+            <h3 class="section-title" style="margin-top: 6rem;">Secondary Sponsors</h3>
+            <p class="section-subtitle">Our cherished friends and family</p>
+
+            <div class="secondary-sponsors-wrapper">
+                <div class="sponsors-arc-bg">
+                    <div class="sponsors-content" style="max-width: 700px;">
+                        <!-- Best Man & Maid of Honor -->
+                        <div class="secondary-group">
+                            <div class="secondary-names">
+                                <strong
+                                    style="font-family: 'Great Vibes', cursive; font-size: 1.8rem; display: block; margin-bottom: 0.5rem;">Best
+                                    Man</strong>
+                                VALIANT DALE BAUTISTA ACORDA
+                            </div>
+                        </div>
+                        <div class="secondary-group">
+                            <div class="secondary-names">
+                                <strong
+                                    style="font-family: 'Great Vibes', cursive; font-size: 1.8rem; display: block; margin-bottom: 0.5rem;">Maid
+                                    of Honor</strong>
+                                ZYRA EVANGELISTA
+                            </div>
+                        </div>
+
+                        <!-- Candle, Cord, Veil in 3 columns -->
+                        <div class="secondary-grid">
+                            <div class="secondary-grid-item">
+                                <h5 class="secondary-group-title">Candle</h5>
+                                <div class="secondary-names">
+                                    CEASAR FORONDA RAMIL<br>
+                                    KRISTINE GRACE TAMARGO
+                                </div>
+                            </div>
+                            <div class="secondary-grid-item">
+                                <h5 class="secondary-group-title">Cord</h5>
+                                <div class="secondary-names">
+                                    ZYRIL EVANGELISTA<br>
+                                    RHINA JEAN VALIENTE
+                                </div>
+                            </div>
+                            <div class="secondary-grid-item">
+                                <h5 class="secondary-group-title">Veil</h5>
+                                <div class="secondary-names">
+                                    DWIGHT ALCABEDAS JR.<br>
+                                    JANICA TABAGO
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ushers & Usherettes -->
+                        <div class="secondary-group">
+                            <h5 class="secondary-group-title">Ushers & Usherettes</h5>
+                            <div class="secondary-names">
+                                NOEL LABUGUEN & ILEA DELA CRUZ<br>
+                                AUMAR CACHERO & KATHLEEN ANN ACOSTA
+                            </div>
+                        </div>
+
+                        <!-- Bible Bearer, Ring Bearer, Coin Bearer in 3 columns -->
+                        <div class="secondary-grid">
+                            <div class="secondary-grid-item">
+                                <h5 class="secondary-group-title">Bible Bearer</h5>
+                                <div class="secondary-names">KENJI ALCABEDAS</div>
+                            </div>
+                            <div class="secondary-grid-item">
+                                <h5 class="secondary-group-title">Ring Bearer</h5>
+                                <div class="secondary-names">KEIDEN ORTIZ</div>
+                            </div>
+                            <div class="secondary-grid-item">
+                                <h5 class="secondary-group-title">Coin Bearer</h5>
+                                <div class="secondary-names">CHASE ZACHARY LINDO</div>
+                            </div>
+                        </div>
+
+                        <!-- Flower Girls and Little Groom/Bride -->
+                        <div class="secondary-group">
+                            <h5 class="secondary-group-title">Flower Girls</h5>
+                            <div class="secondary-names">
+                                MHA REIN ROMBAUA<br>
+                                JAISHREE P. ORANI<br>
+                                THALEIA EMPEÑO LAUD<br>
+                                KRISTINE ALEXA F. RAMOS
+                            </div>
+                        </div>
+
+                        <div class="secondary-grid"
+                            style="grid-template-columns: 1fr 1fr; max-width: 600px; margin: 2rem auto 0;">
+                            <div class="secondary-grid-item">
+                                <h5 class="secondary-group-title">Little Groom</h5>
+                                <div class="secondary-names">KAEDEN WINDELL VEA</div>
+                            </div>
+                            <div class="secondary-grid-item">
+                                <h5 class="secondary-group-title">Little Bride</h5>
+                                <div class="secondary-names">DOMINIQUE CLARIZ ALINDAYU</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GIFTS -->
+        <section class="details-section">
+            <h3 class="section-title">Wedding Gifts</h3>
+            <p class="section-subtitle">Your presence is our present</p>
+            <div
+                style="max-width: 700px; margin: 0 auto; text-align: center; padding: 3rem; background: linear-gradient(135deg, rgba(156,175,136,0.1), rgba(201,216,182,0.15)); border-radius: 20px;">
+                <p style="font-size: 1.2rem; line-height: 1.8; color: var(--dark); margin-bottom: 1.5rem;">
+                    We are honored with presents from you. As we start our new journey together,
+                    <strong style="color: var(--sage-dark);">monetary gifts will be very much
+                        appreciated</strong>.
+                </p>
+            </div>
+        </section>
+
+        <!-- RSVP -->
+        <section class="rsvp-section" id="rsvpSection">
+            <h3 class="section-title">RSVP</h3>
+            <p class="section-subtitle">Please respond on or before April 28, 2026</p>
+
+            <div class="rsvp-container">
+                <form class="rsvp-form" id="rsvpForm">
+                    <input type="text" name="name" placeholder="Full Name *" required>
+                    <select name="attendance" required>
+                        <option value="">Will you attend? *</option>
+                        <option value="yes">Joyfully Accepts</option>
+                        <option value="no">Regretfully Declines</option>
+                    </select>
+                    <input type="email" name="email" placeholder="Email Address">
+                    <input type="tel" name="phone" placeholder="Phone Number">
+                    <textarea name="message" placeholder="Special message for the couple (optional)"
+                        rows="4"></textarea>
+                    <button type="submit">Submit RSVP</button>
+                </form>
+                <p class="form-status" id="formStatus"></p>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-heart">♥</div>
+                <p style="font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 0.5rem;">
+                    Eric & Zyra
+                </p>
+                <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; opacity: 0.9;">
+                    May 28, 2026
+                </p>
+                <div class="footer-divider"></div>
+                <p class="footer-creator">
+                    Crafted with love by <a href="#" target="_blank">Zyril Evangelista</a>
+                </p>
+            </div>
+        </footer>
+
+        <script>
+            // ========== RSVP FORM ==========
+            const rsvpForm = document.getElementById('rsvpForm');
+            const formStatus = document.getElementById('formStatus');
+
+            if (rsvpForm) {
+                rsvpForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+
+                    formStatus.textContent = 'Sending your response...';
+                    formStatus.style.color = 'var(--sage)';
+
+                    const formData = new FormData(rsvpForm);
+                    const data = {
+                        name: formData.get('name'),
+                        attendance: formData.get('attendance'),
+                        email: formData.get('email') || '',
+                        phone: formData.get('phone') || '',
+                        message: formData.get('message') || '',
+                        timestamp: new Date().toISOString()
+                    };
+
+                    try {
+                        const APPS_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+
+                        const response = await fetch(APPS_SCRIPT_URL, {
+                            method: 'POST',
+                            mode: 'no-cors',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(data)
+                        });
+
+                        formStatus.textContent = 'Thank you! We look forward to celebrating with you!';
+                        formStatus.style.color = 'var(--sage-dark)';
+
+                        setTimeout(() => {
+                            rsvpForm.reset();
+                            formStatus.textContent = '';
+                        }, 3000);
+
+                    } catch (error) {
+                        console.error('Error submitting RSVP:', error);
+                        formStatus.textContent = 'Oops! Something went wrong. Please try again.';
+                        formStatus.style.color = '#d9534f';
+                    }
+                });
+            }
+
+            // ========== SCROLL ANIMATIONS ==========
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe arc containers
+            document.querySelectorAll('.sponsors-arc-bg').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Also observe other elements
+            document.querySelectorAll('.timeline-item, .gallery-item, .venue-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+
+                const itemObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                            itemObserver.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                itemObserver.observe(el);
+            });
+
+            // ========== ENVELOPE ANIMATION SCRIPT ==========
+            const envelopeContainer = document.getElementById('envelopeContainer');
+            const envelopeWrapper = document.getElementById('envelopeWrapper');
+            const envelopeHeart = document.getElementById('envelopeHeart');
+            const invitationLetter = document.getElementById('invitationLetter');
+            const mainContent = document.getElementById('mainContent');
+
+            let isFlapped = false;
+            let isOpened = false;
+
+            envelopeHeart.addEventListener('click', () => {
+                if (!isFlapped) {
+                    // First click - flap open
+                    envelopeWrapper.classList.add('flap');
+                    isFlapped = true;
+                } else if (!isOpened) {
+                    // Second click - open full invitation
+                    envelopeWrapper.classList.add('opened');
+                    isOpened = true;
+
+                    setTimeout(() => {
+                        mainContent.classList.add('visible');
+                    }, 500);
+
+                    setTimeout(() => {
+                        envelopeContainer.classList.add('hidden');
+                    }, 1500);
+                }
+            });
+
+            // Alternative: click anywhere on letter after flap
+            invitationLetter.addEventListener('click', () => {
+                if (isFlapped && !isOpened) {
+                    envelopeWrapper.classList.add('opened');
+                    isOpened = true;
+
+                    setTimeout(() => {
+                        mainContent.classList.add('visible');
+                    }, 500);
+
+                    setTimeout(() => {
+                        envelopeContainer.classList.add('hidden');
+                    }, 1500);
+                }
+            });
+
+            // ========== GOLD FAIRY DUST CURSOR EFFECT ==========
+            (function fairyDustCursor() {
+                var possibleColors = ["#d4af37", "#f4d03f", "#c9a033"];
+                var width = window.innerWidth;
+                var height = window.innerHeight;
+                var cursor = { x: width / 2, y: width / 2 };
+                var particles = [];
+
+                function init() {
+                    bindEvents();
+                    loop();
+                }
+
+                function bindEvents() {
+                    document.addEventListener('mousemove', onMouseMove);
+                    document.addEventListener('touchmove', onTouchMove);
+                    document.addEventListener('touchstart', onTouchMove);
+                    window.addEventListener('resize', onWindowResize);
+                }
+
+                function onWindowResize(e) {
+                    width = window.innerWidth;
+                    height = window.innerHeight;
+                }
+
+                function onTouchMove(e) {
+                    if (e.touches.length > 0) {
+                        for (var i = 0; i < e.touches.length; i++) {
+                            addParticle(e.touches[i].clientX, e.touches[i].clientY, possibleColors[Math.floor(Math.random() * possibleColors.length)]);
+                        }
+                    }
+                }
+
+                function onMouseMove(e) {
+                    cursor.x = e.clientX;
+                    cursor.y = e.clientY;
+                    addParticle(cursor.x, cursor.y, possibleColors[Math.floor(Math.random() * possibleColors.length)]);
+                }
+
+                function addParticle(x, y, color) {
+                    var particle = new Particle();
+                    particle.init(x, y, color);
+                    particles.push(particle);
+                }
+
+                function updateParticles() {
+                    for (var i = 0; i < particles.length; i++) {
+                        particles[i].update();
+                    }
+
+                    for (var i = particles.length - 1; i >= 0; i--) {
+                        if (particles[i].lifeSpan < 0) {
+                            particles[i].die();
+                            particles.splice(i, 1);
+                        }
+                    }
+                }
+
+                function loop() {
+                    requestAnimationFrame(loop);
+                    updateParticles();
+                }
+
+                function Particle() {
+                    this.character = "*";
+                    this.lifeSpan = 120;
+                    this.initialStyles = {
+                        "position": "fixed",
+                        "display": "block",
+                        "pointerEvents": "none",
+                        "z-index": "10000000",
+                        "fontSize": "16px",
+                        "will-change": "transform"
+                    };
+
+                    this.init = function (x, y, color) {
+                        this.velocity = {
+                            x: (Math.random() < 0.5 ? -1 : 1) * (Math.random() / 2),
+                            y: 1
+                        };
+
+                        this.position = { x: x - 10, y: y - 20 };
+                        this.initialStyles.color = color;
+                        this.element = document.createElement('span');
+                        this.element.innerHTML = this.character;
+                        applyProperties(this.element, this.initialStyles);
+                        this.update();
+
+                        document.querySelector('.container').appendChild(this.element);
+                    };
+
+                    this.update = function () {
+                        this.position.x += this.velocity.x;
+                        this.position.y += this.velocity.y;
+                        this.lifeSpan--;
+
+                        this.element.style.transform = "translate3d(" + this.position.x + "px," + this.position.y + "px, 0) scale(" + (this.lifeSpan / 120) + ")";
+                    }
+
+                    this.die = function () {
+                        this.element.parentNode.removeChild(this.element);
+                    }
+                }
+
+                function applyProperties(target, properties) {
+                    for (var key in properties) {
+                        target.style[key] = properties[key];
+                    }
+                }
+
+                init();
+            })();
+        </script>
+
+    </div>
+</body>
+
+</html>
