@@ -87,6 +87,44 @@
             pointer-events: none;
         }
         
+        /* Music Toggle Button */
+        .music-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .music-toggle:hover {
+            transform: scale(1.1);
+        }
+        
+        .music-toggle .music-icon {
+            font-size: 1.5rem;
+            color: var(--forest);
+            animation: musicNote 2s ease-in-out infinite;
+        }
+        
+        .music-toggle.muted .music-icon {
+            animation: none;
+            opacity: 0.5;
+        }
+        
+        @keyframes musicNote {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        
         .invitation-gate {
             position: fixed;
             top: 0;
@@ -1664,6 +1702,16 @@
     </style>
 </head>
 <body>
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="bgmusic.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- Music Toggle Button -->
+    <div class="music-toggle" id="musicToggle">
+        <span class="music-icon">♪</span>
+    </div>
+    
     <div class="letterbox-bottom"></div>
 
     <div class="invitation-gate" id="invitationGate">
@@ -2164,6 +2212,39 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1200, once: true, offset: 100, easing: 'ease-out-cubic' });
+        
+        // Background Music
+        const bgMusic = document.getElementById('bgMusic');
+        const musicToggle = document.getElementById('musicToggle');
+        
+        // Auto play music when user interacts with the page (required by browsers)
+        let musicStarted = false;
+        
+        function startMusic() {
+            if (!musicStarted) {
+                bgMusic.volume = 0.5;
+                bgMusic.play().then(() => {
+                    musicStarted = true;
+                }).catch(err => {
+                    console.log('Autoplay prevented:', err);
+                });
+            }
+        }
+        
+        // Try to autoplay on first user interaction
+        document.addEventListener('click', startMusic, { once: true });
+        document.addEventListener('scroll', startMusic, { once: true });
+        
+        // Toggle music on button click
+        musicToggle.addEventListener('click', () => {
+            if (bgMusic.paused) {
+                bgMusic.play();
+                musicToggle.classList.remove('muted');
+            } else {
+                bgMusic.pause();
+                musicToggle.classList.add('muted');
+            }
+        });
 
         const invitationGate = document.getElementById('invitationGate');
         const openBtn = document.getElementById('openBtn');
