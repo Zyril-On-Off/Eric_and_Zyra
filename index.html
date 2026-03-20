@@ -1915,10 +1915,70 @@
             min-width: unset;
             max-width: unset;
         }
+
+        /* ─── PRELOADER ─── */
+        .preloader {
+            position: fixed;
+            inset: 0;
+            z-index: 20000;
+            background: linear-gradient(150deg, #3a4a35 0%, #758467 40%, #819171 70%, #9CAF88 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity .8s ease, visibility .8s ease;
+        }
+
+        .preloader.done {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .preloader-logo {
+            height: clamp(55px, 14vw, 90px);
+            width: auto;
+            filter: brightness(0) invert(1);
+            opacity: .9;
+            margin-bottom: 32px;
+        }
+
+        .preloader-bar-wrap {
+            width: clamp(140px, 40vw, 220px);
+            height: 2px;
+            background: rgba(255, 255, 255, .2);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .preloader-bar {
+            height: 100%;
+            width: 0%;
+            background: rgba(255, 255, 255, .75);
+            border-radius: 2px;
+            transition: width .3s ease;
+        }
+
+        .preloader-text {
+            font-family: var(--fb);
+            font-size: .58rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .55);
+            margin-top: 16px;
+        }
     </style>
 </head>
 
 <body>
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <img src="logo.png" alt="E & Z" class="preloader-logo">
+        <div class="preloader-bar-wrap">
+            <div class="preloader-bar" id="preloaderBar"></div>
+        </div>
+        <p class="preloader-text" id="preloaderText">Loading</p>
+    </div>
     <audio id="bgMusic" preload="none">
         <source src="bgmusic.mp3" type="audio/mpeg">
     </audio>
@@ -2498,6 +2558,50 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1100, once: true, offset: 80, easing: 'ease-out-cubic' });
+
+        // ── Preloader ──
+        (function () {
+            const preloader = document.getElementById('preloader');
+            const bar = document.getElementById('preloaderBar');
+            const txt = document.getElementById('preloaderText');
+
+            // Images that must load before we show the gate
+            const criticalSrcs = [
+                '047A7707-1.jpg',   // hero
+                '047A6576-1.jpg',   // countdown bg
+                '047A6244-1.jpg',   // venue ceremony
+                '047A7846-1.jpg',   // venue reception
+            ];
+
+            let loaded = 0;
+            const total = criticalSrcs.length;
+
+            function onProgress() {
+                loaded++;
+                const pct = Math.round((loaded / total) * 100);
+                bar.style.width = pct + '%';
+                txt.textContent = pct < 100 ? 'Loading ' + pct + '%' : 'Ready';
+                if (loaded >= total) finish();
+            }
+
+            function finish() {
+                setTimeout(() => {
+                    preloader.classList.add('done');
+                }, 400);
+            }
+
+            // Set a max wait time so slow connections don't hang forever
+            const maxWait = setTimeout(finish, 8000);
+
+            criticalSrcs.forEach(src => {
+                const img = new Image();
+                img.onload = onProgress;
+                img.onerror = onProgress; // count errors too so we always proceed
+                img.src = src;
+            });
+
+            // If everything was already cached it resolves instantly
+        })();
 
 
         const navbar = document.getElementById('navbar');
