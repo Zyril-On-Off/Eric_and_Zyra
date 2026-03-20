@@ -150,7 +150,7 @@
         .gate {
             position: fixed;
             inset: 0;
-            background: linear-gradient(160deg, #2a3826 0%, #1e2d1b 60%, #3a4a2e 100%);
+            background: linear-gradient(150deg, #3a4a35 0%, #758467 40%, #819171 70%, #9CAF88 100%);
             z-index: 10000;
             display: flex;
             flex-direction: column;
@@ -165,7 +165,6 @@
             width: 100vw;
             height: 100dvh;
             min-height: -webkit-fill-available;
-            /* Visually nudge content up to account for iOS address bar offset */
             padding-bottom: 12vh;
         }
 
@@ -1086,8 +1085,20 @@
         /* venue section header sits above panels */
         .venue-heading {
             text-align: center;
-            padding: 80px 8% 40px;
+            padding: 70px 8% 36px;
             background: var(--ivory);
+        }
+
+        .venue-eyebrow {
+            font-family: var(--fv);
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            color: var(--forest);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .venue-heading .sec-title {
+            margin-bottom: 0;
         }
 
         @media (max-width:768px) {
@@ -1111,11 +1122,11 @@
         /* ─── ENTOURAGE ─── */
         .ent-section {
             padding: 0;
-            background: var(--cream);
+            background: var(--s1);
         }
 
         .ent-card {
-            max-width: 880px;
+            max-width: 1100px;
             margin: 0 auto;
             background: var(--s1);
             background-image:
@@ -1403,72 +1414,82 @@
         /* Rules */
         .attire-rules-block {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .attire-rule-row {
-            margin-bottom: 10px;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
         .attire-rule-who {
             font-family: var(--fb);
-            font-size: .6rem;
+            font-size: .62rem;
             letter-spacing: 3px;
             text-transform: uppercase;
             color: var(--s1);
-            display: block;
-            margin-bottom: 2px;
+            flex-shrink: 0;
+        }
+
+        .attire-rule-sep {
+            width: 20px;
+            height: 1px;
+            background: var(--s3);
+            opacity: .5;
+            flex-shrink: 0;
+            align-self: center;
         }
 
         .attire-rule-what {
             font-family: var(--fs);
-            font-size: 1rem;
+            font-size: 1.15rem;
             font-style: italic;
             color: var(--forest);
         }
 
-        /* Horizontal palette */
+        /* Modern palette strip */
         .attire-hpal {
             display: flex;
             justify-content: center;
-            align-items: center;
-            gap: 8px;
-            margin-top: 16px;
-            flex-wrap: wrap;
+            align-items: stretch;
+            gap: 0;
+            margin-top: 18px;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 3px 12px rgba(58, 79, 53, .15);
         }
 
         .attire-hpal-group {
             display: flex;
-            gap: 6px;
-            align-items: center;
         }
 
         .attire-hpal-sep {
-            width: 1px;
-            height: 20px;
-            background: rgba(58, 79, 53, .15);
-            margin: 0 6px;
+            width: 2px;
+            background: rgba(255, 255, 255, .6);
         }
 
         .hp-dot {
-            border-radius: 50%;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, .12);
             flex-shrink: 0;
+            border-radius: 0;
         }
 
         .hp-s {
-            width: 18px;
-            height: 18px;
+            width: 28px;
+            height: 28px;
         }
 
         .hp-m {
-            width: 24px;
-            height: 24px;
+            width: 36px;
+            height: 36px;
         }
 
         .hp-l {
-            width: 30px;
-            height: 30px;
+            width: 44px;
+            height: 44px;
         }
 
         .attire-note {
@@ -1878,8 +1899,17 @@
 </head>
 
 <body>
-    <audio id="bgMusic" loop>
+    <audio id="bgMusic" preload="none">
         <source src="bgmusic.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="bgMusic1" preload="none">
+        <source src="bgmusic1.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="bgMusic2" preload="none">
+        <source src="bgmusic2.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="bgMusic3" preload="none">
+        <source src="bgmusic3.mp3" type="audio/mpeg">
     </audio>
 
     <!-- Music Tab -->
@@ -2078,6 +2108,10 @@
 
     <!-- 6. VENUE -->
     <section class="venue-section" id="venue">
+        <div class="venue-heading" data-aos="fade-up">
+            <span class="venue-eyebrow">The Venue</span>
+            <div class="sec-rule"></div>
+        </div>
         <div class="venue-panels">
             <div class="venue-panel" data-aos="fade-right">
                 <div class="venue-panel-img" style="background-image:url('047A6244-1.jpg');"></div>
@@ -2300,9 +2334,9 @@
                     <!-- carousel -->
                     <div class="attire-carousel" id="attire-carousel-1">
                         <div class="attire-slides" id="attire-slides-1">
-                            <div class="attire-slide"><img src="047A6576-1.jpg" alt="Sponsor attire 1"></div>
-                            <div class="attire-slide"><img src="047A7823-1.jpg" alt="Sponsor attire 2"></div>
-                            <div class="attire-slide"><img src="047A6244-1.jpg" alt="Sponsor attire 3"></div>
+                            <div class="attire-slide"><img src="inspo1a.png" alt="Sponsor look 1"></div>
+                            <div class="attire-slide"><img src="inspo1b.png" alt="Sponsor look 2"></div>
+                            <div class="attire-slide"><img src="inspo1c.png" alt="Sponsor look 3"></div>
                         </div>
                         <button class="attire-carousel-btn attire-cbtn-prev" onclick="attireSlide('1',-1)">
                             <svg viewBox="0 0 24 24">
@@ -2325,10 +2359,12 @@
                     <div class="attire-rules-block">
                         <div class="attire-rule-row">
                             <span class="attire-rule-who">Ninang</span>
+                            <div class="attire-rule-sep"></div>
                             <span class="attire-rule-what">Sage Green, Emerald, or Olive Green Dress</span>
                         </div>
                         <div class="attire-rule-row">
                             <span class="attire-rule-who">Ninong</span>
+                            <div class="attire-rule-sep"></div>
                             <span class="attire-rule-what">Black Suit &amp; Tie</span>
                         </div>
                     </div>
@@ -2336,11 +2372,11 @@
                     <!-- palette -->
                     <div class="attire-hpal">
                         <div class="attire-hpal-group">
-                            <div class="hp-dot hp-s" style="background:#758467;"></div>
+                            <div class="hp-dot hp-m" style="background:#758467;"></div>
                             <div class="hp-dot hp-m" style="background:#819171;"></div>
-                            <div class="hp-dot hp-l" style="background:#9CAF88;"></div>
+                            <div class="hp-dot hp-m" style="background:#9CAF88;"></div>
                             <div class="hp-dot hp-m" style="background:#CBD5C0;"></div>
-                            <div class="hp-dot hp-s" style="background:#DFE6DA;"></div>
+                            <div class="hp-dot hp-m" style="background:#DFE6DA;"></div>
                         </div>
                     </div>
                 </div>
@@ -2352,9 +2388,9 @@
                     <!-- carousel -->
                     <div class="attire-carousel" id="attire-carousel-2">
                         <div class="attire-slides" id="attire-slides-2">
-                            <div class="attire-slide"><img src="047A7352-1.jpg" alt="Guest attire 1"></div>
-                            <div class="attire-slide"><img src="047A7217-1.jpg" alt="Guest attire 2"></div>
-                            <div class="attire-slide"><img src="047A6109-1.jpg" alt="Guest attire 3"></div>
+                            <div class="attire-slide"><img src="inspo2a.png" alt="Guest look 1"></div>
+                            <div class="attire-slide"><img src="inspo2b.png" alt="Guest look 2"></div>
+                            <div class="attire-slide"><img src="inspo2c.png" alt="Guest look 3"></div>
                         </div>
                         <button class="attire-carousel-btn attire-cbtn-prev" onclick="attireSlide('2',-1)">
                             <svg viewBox="0 0 24 24">
@@ -2377,10 +2413,12 @@
                     <div class="attire-rules-block">
                         <div class="attire-rule-row">
                             <span class="attire-rule-who">Ladies</span>
+                            <div class="attire-rule-sep"></div>
                             <span class="attire-rule-what">Long Dress or Gown</span>
                         </div>
                         <div class="attire-rule-row">
                             <span class="attire-rule-who">Gentlemen</span>
+                            <div class="attire-rule-sep"></div>
                             <span class="attire-rule-what">Long Sleeves, Polo, or Shirt</span>
                         </div>
                     </div>
@@ -2388,19 +2426,19 @@
                     <!-- palette — both -->
                     <div class="attire-hpal">
                         <div class="attire-hpal-group">
-                            <div class="hp-dot hp-s" style="background:#758467;"></div>
+                            <div class="hp-dot hp-m" style="background:#758467;"></div>
                             <div class="hp-dot hp-m" style="background:#819171;"></div>
-                            <div class="hp-dot hp-l" style="background:#9CAF88;"></div>
+                            <div class="hp-dot hp-m" style="background:#9CAF88;"></div>
                             <div class="hp-dot hp-m" style="background:#CBD5C0;"></div>
-                            <div class="hp-dot hp-s" style="background:#DFE6DA;"></div>
+                            <div class="hp-dot hp-m" style="background:#DFE6DA;"></div>
                         </div>
                         <div class="attire-hpal-sep"></div>
                         <div class="attire-hpal-group">
-                            <div class="hp-dot hp-s" style="background:#4a4035;"></div>
+                            <div class="hp-dot hp-m" style="background:#4a4035;"></div>
                             <div class="hp-dot hp-m" style="background:#7a6e5f;"></div>
-                            <div class="hp-dot hp-l" style="background:#a89b8a;"></div>
+                            <div class="hp-dot hp-m" style="background:#a89b8a;"></div>
                             <div class="hp-dot hp-m" style="background:#cfc5b5;"></div>
-                            <div class="hp-dot hp-s" style="background:#e8e2d8;"></div>
+                            <div class="hp-dot hp-m" style="background:#e8e2d8;"></div>
                         </div>
                     </div>
                 </div>
@@ -2481,22 +2519,77 @@
             navLinks.classList.remove('active');
         }));
 
-        // ── Music (declared before gate so gate can reference musicTab) ──
-        const bgMusic = document.getElementById('bgMusic');
+
+        // ── Music Playlist ──
         const musicTab = document.getElementById('musicTab');
         const musicLbl = document.getElementById('musicLabel');
+        const playlist = [
+            document.getElementById('bgMusic'),
+            document.getElementById('bgMusic1'),
+            document.getElementById('bgMusic2'),
+            document.getElementById('bgMusic3')
+        ];
+        let currentTrack = 0;
         let musicStarted = false;
-        let peeked = false;
+        let isMuted = false;
+
+        function getActive() { return playlist[currentTrack]; }
+
+        function playTrack(idx) {
+            // Stop all
+            playlist.forEach(a => { a.pause(); a.currentTime = 0; });
+            currentTrack = idx % playlist.length;
+            getActive().volume = 0.5;
+            getActive().play().catch(() => { });
+            // Auto advance when track ends
+            getActive().onended = () => playTrack(currentTrack + 1);
+        }
+
+        function nextTrack() {
+            playTrack(currentTrack + 1);
+            // Briefly show track indicator
+            const num = currentTrack + 1;
+            musicLbl.textContent = `Track ${num} / ${playlist.length}`;
+            setTimeout(() => musicLbl.textContent = isMuted ? 'Muted' : 'Now Playing', 2000);
+        }
 
         function startMusic() {
-            if (!musicStarted) { bgMusic.volume = .5; bgMusic.play().then(() => musicStarted = true).catch(() => { }); }
+            if (!musicStarted) {
+                musicStarted = true;
+                playTrack(0);
+            }
         }
         document.addEventListener('click', startMusic, { once: true });
         document.addEventListener('scroll', startMusic, { once: true });
 
+        // Single click = mute/unmute  |  Double click = next song
+        let clickTimer = null;
         musicTab.addEventListener('click', () => {
-            if (bgMusic.paused) { bgMusic.play(); musicTab.classList.remove('muted'); musicLbl.textContent = 'Music On'; }
-            else { bgMusic.pause(); musicTab.classList.add('muted'); musicLbl.textContent = 'Music Off'; }
+            if (clickTimer) {
+                // Double click detected
+                clearTimeout(clickTimer);
+                clickTimer = null;
+                nextTrack();
+                musicTab.classList.remove('muted');
+                isMuted = false;
+            } else {
+                clickTimer = setTimeout(() => {
+                    clickTimer = null;
+                    // Single click = toggle mute
+                    if (!isMuted) {
+                        getActive().pause();
+                        musicTab.classList.add('muted');
+                        musicLbl.textContent = 'Muted';
+                        isMuted = true;
+                    } else {
+                        if (!musicStarted) { startMusic(); }
+                        else { getActive().play().catch(() => { }); }
+                        musicTab.classList.remove('muted');
+                        musicLbl.textContent = 'Now Playing';
+                        isMuted = false;
+                    }
+                }, 280);
+            }
         });
 
         // ── Logo → top ──
@@ -2522,7 +2615,10 @@
             // Slide fully out once as a hint, then retract to peek
             setTimeout(() => {
                 musicTab.classList.add('peek');
-                setTimeout(() => musicTab.classList.remove('peek'), 2400);
+                setTimeout(() => {
+                    musicTab.classList.remove('peek');
+                    musicLbl.textContent = '♪  Tap · Next';
+                }, 2400);
             }, 600);
         });
 
