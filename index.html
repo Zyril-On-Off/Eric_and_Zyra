@@ -234,7 +234,24 @@
             }
         }
 
-        /* ─── NAVBAR ─── */
+        @media (max-width:768px) {
+            .gate-logo {
+                height: clamp(70px, 18vw, 110px);
+                margin-bottom: clamp(20px, 5vw, 32px);
+            }
+
+            .gate-names {
+                font-size: clamp(2.4rem, 10vw, 3.8rem);
+            }
+
+            .gate-btn {
+                margin-top: clamp(24px, 6vw, 36px);
+                padding: 14px clamp(36px, 10vw, 56px);
+                font-size: .82rem;
+                letter-spacing: 5px;
+            }
+        }
+
         .navbar {
             position: fixed;
             top: 0;
